@@ -6,6 +6,10 @@
 }
 
 :root {
+  --font-size: 16px;
+  --font-weight-bold: 800;
+  --font-weight-semibold: bold;
+  --font-weight-normal: 500;
   --yellow: hsl(47, 88%, 63%);
   --white: hsl(0, 0%, 100%);
   --gray-500: hsl(0, 0%, 42%);
@@ -13,6 +17,101 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: var(--font-size);
   font-family: "Figtree";
+}
+
+body {
+  background-color: var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.blog-preview-card {
+  --card-width: 380px;
+
+  background-color: var(--white);
+  max-width: var(--card-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border: 2px solid var(--gray-950);
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem var(--gray-950);
+  gap: 1.5rem;
+
+  & .post-header {
+    & .post-img {
+      display: inline-block;
+      border-radius: 1rem;
+      margin-bottom: 0.25rem;
+      overflow: hidden;
+
+      & img {
+        max-height: 100%;
+      }
+    }
+
+    & .post-category {
+      background-color: var(--yellow);
+      font-weight: var(--font-weight-bold);
+      font-size: 0.9rem;
+      border-radius: 0.25rem;
+      width: fit-content;
+      padding: 0.25rem 0.5rem;
+      margin-block: 0.5rem;
+    }
+
+    & .post-date {
+      font-weight: var(--font-weight-semibold);
+      font-size: 0.9rem;
+    }
+  }
+
+  & .post-content {
+    & h1 {
+      font-weight: var(--font-weight-semibold);
+      color: var(--gray-950);
+      margin-bottom: 0.75rem;
+    }
+
+    & h1:hover {
+      color: var(--yellow);
+      cursor: pointer;
+    }
+
+    & p {
+      color: var(--gray-500);
+      font-weight: var(--font-weight-normal);
+    }
+  }
+
+  & .post-author {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    & .author-img {
+      max-width: 2.25rem;
+    }
+
+    & p {
+      font-weight: var(--font-weight-bold);
+    }
+  }
+}
+
+@media (width < 375px) {
+  :root {
+    font-size: 0.9rem;
+  }
+
+  .blog-preview-card {
+    --card-width: 300px;
+  }
 }
