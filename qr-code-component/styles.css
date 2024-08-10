@@ -13,18 +13,65 @@
 }
 
 html {
+  font-size: 15px;
   font-family: "Outfit";
 }
 
-p {
-  font-size: 15px;
+body {
+  background-color: var(--color-slate-300);
 }
 
-.attribution {
-  font-size: 11px;
+main {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-card {
+  --card-radius: 5%;
+  --card-width: 310px;
+  --img-size: calc(var(--card-width) - 2rem);
+  --img-radius: 3%;
+
+  background-color: var(--color-white);
+  width: var(--card-width);
+  height: fit-content;
   text-align: center;
-}
+  border-radius: var(--card-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 
-.attribution a {
-  color: hsl(228, 45%, 44%);
+  & .qr-card-image {
+    width: var(--img-size);
+    height: var(--img-size);
+    border-radius: var(--img-radius);
+    overflow: hidden;
+    margin-block: 1rem;
+
+    & img {
+      width: 100%;
+    }
+  }
+
+  .qr-card-content {
+    margin-inline: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    & h1,
+    p {
+      margin-bottom: 1rem;
+    }
+
+    & h1 {
+      color: var(--color-slate-900);
+    }
+
+    & p {
+      color: var(--color-slate-500);
+    }
+  }
 }
