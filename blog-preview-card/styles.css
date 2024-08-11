@@ -71,6 +71,7 @@ main {
   & .post-content {
     & h1 {
       font-weight: var(--font-weight-bold);
+      font-size: 1.5rem;
       color: var(--gray-950);
       margin-bottom: 0.75rem;
     }
@@ -103,7 +104,7 @@ main {
   }
 }
 
-@media screen and (width < 375px) {
+@media (width < 375px) {
   :root {
     font-size: 0.9rem;
   }
