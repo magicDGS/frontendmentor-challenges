@@ -8,7 +8,6 @@
 :root {
   --font-size: 16px;
   --font-weight-bold: 800;
-  --font-weight-semibold: bold;
   --font-weight-normal: 500;
   --yellow: hsl(47, 88%, 63%);
   --white: hsl(0, 0%, 100%);
@@ -21,7 +20,7 @@ html {
   font-family: "Figtree";
 }
 
-body {
+main {
   background-color: var(--yellow);
   display: flex;
   justify-content: center;
@@ -30,7 +29,8 @@ body {
 }
 
 .blog-preview-card {
-  --card-width: 380px;
+  --card-width: 385px;
+  --font-small: 0.9rem;
 
   background-color: var(--white);
   max-width: var(--card-width);
@@ -39,27 +39,24 @@ body {
   justify-content: center;
   align-items: flex-start;
   padding: 1.5rem;
-  border: 2px solid var(--gray-950);
+  border: 1.5px solid var(--gray-950);
   border-radius: 1rem;
   box-shadow: 0.5rem 0.5rem var(--gray-950);
-  gap: 1.5rem;
+  gap: 1rem;
 
   & .post-header {
+    font-size: var(--font-small);
+
     & .post-img {
       display: inline-block;
       border-radius: 1rem;
       margin-bottom: 0.25rem;
       overflow: hidden;
-
-      & img {
-        max-height: 100%;
-      }
     }
 
     & .post-category {
       background-color: var(--yellow);
       font-weight: var(--font-weight-bold);
-      font-size: 0.9rem;
       border-radius: 0.25rem;
       width: fit-content;
       padding: 0.25rem 0.5rem;
@@ -67,14 +64,13 @@ body {
     }
 
     & .post-date {
-      font-weight: var(--font-weight-semibold);
-      font-size: 0.9rem;
+      font-weight: var(--font-weight-normal);
     }
   }
 
   & .post-content {
     & h1 {
-      font-weight: var(--font-weight-semibold);
+      font-weight: var(--font-weight-bold);
       color: var(--gray-950);
       margin-bottom: 0.75rem;
     }
@@ -97,16 +93,17 @@ body {
     gap: 10px;
 
     & .author-img {
-      max-width: 2.25rem;
+      max-width: 2rem;
     }
 
     & p {
+      font-size: var(--font-small);
       font-weight: var(--font-weight-bold);
     }
   }
 }
 
-@media (width < 375px) {
+@media screen and (width < 375px) {
   :root {
     font-size: 0.9rem;
   }
