@@ -24,3 +24,81 @@ html {
   font-size: var(--font-size);
   font-family: "Inter";
 }
+
+main {
+  display: grid;
+  place-content: center;
+  height: 100dvh;
+  background-color: var(--color-grey-900);
+}
+
+/* component styling */
+.social-links-card {
+  --card-width: 340px;
+  --avatar-size: 80px;
+
+  background-color: var(--color-grey-800);
+  color: var(--color-white);
+  border-radius: 0.5rem;
+  display: grid;
+  place-items: center;
+  gap: 1.75rem;
+  padding: 2.5rem;
+  text-align: center;
+  min-width: var(--card-width);
+
+  & .avatar {
+    width: var(--avatar-size);
+    aspect-ratio: 1;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+
+  & .info {
+    line-height: 2rem;
+
+    & h1 {
+      font-size: 1.5rem;
+      font-weight: var(--font-weight-bold);
+    }
+
+    & p {
+      color: var(--color-green);
+      font-weight: var(--font-weight-bold);
+      font-size: 0.9rem;
+    }
+  }
+
+  & .quote {
+    font-weight: var(--font-weight-normal);
+    font-size: 0.9rem;
+  }
+
+  & .social-link-section {
+    display: grid;
+    width: 100%;
+    gap: 0.75rem;
+
+    & a {
+      text-decoration: none;
+      font-weight: var(--font-weight-semibold);
+      background-color: var(--color-grey-700);
+      color: var(--color-white);
+      border-radius: 0.5rem;
+      padding: 0.65rem;
+    }
+
+    & a:hover {
+      background-color: var(--color-green);
+      color: var(--color-grey-900);
+    }
+  }
+}
+
+/* simple responsive */
+@media (width < 375px) {
+  .social-links-card {
+    --card-width: 300px;
+    padding: 1.5rem;
+  }
+}
